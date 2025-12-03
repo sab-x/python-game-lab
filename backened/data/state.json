@@ -1,0 +1,18 @@
+{
+  "mode": "two_player",
+  "max_rounds": 5,
+  "playerScores": {
+    "1": 28,
+    "2": 29
+  },
+  "playerRounds": {
+    "1": 5,
+    "2": 5
+  },
+  "total_actions": 10,
+  "history": [
+    {
+      
+    }
+  ]
+}

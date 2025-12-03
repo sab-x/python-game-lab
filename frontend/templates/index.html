@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Dice Rolling Game</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="app">
+    <aside class="left-panel">
+      <div class="control-box">
+        <h2>🎮 Game Controls</h2>
+
+        <!-- Game Mode -->
+        <div class="control-line">
+          <label>Mode</label>
+          <div class="btn-group">
+            <button id="btnSolo" class="mode-btn active" data-mode="solo">Solo</button>
+            <button id="btnVsComputer" class="mode-btn" data-mode="vs_computer">VS Computer</button>
+            <button id="btnTwoPlayer" class="mode-btn" data-mode="two_player">2 Players</button>
+          </div>
+        </div>
+
+        <!-- Dice Count -->
+        <div class="control-line">
+          <label>Dice Count</label>
+          <div class="btn-group">
+            <button id="btnOne" class="count-btn active" data-count="1">1</button>
+            <button id="btnTwo" class="count-btn" data-count="2">2</button>
+          </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="control-line">
+          <label>Action</label>
+          <div class="btn-group">
+            <button id="rollBtn" class="action-btn">Roll</button>
+            <button id="rollP1Btn" class="action-btn hidden" data-player="1">Roll P1</button>
+            <button id="rollP2Btn" class="action-btn hidden" data-player="2">Roll P2</button>
+            <button id="resetBtn" class="action-btn muted">Reset</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Stats -->
+      <div class="mini-stats">
+        <h3>📊 Quick Stats</h3>
+        <div><strong>Total Rolls:</strong> <span id="miniTotal">0</span></div>
+        <div><strong>Highest Sum:</strong> <span id="miniHigh">0</span></div>
+      </div>
+    </aside>
+
+    <!-- Main Game Area -->
+    <main class="main-panel">
+      <header>
+        <h1>🎲 Dice Rolling Game</h1>
+        <p class="subtitle">Play Solo, Vs Computer, or 2 Players!</p>
+      </header>
+
+      <section class="game-area">
+        <div class="players-area">
+          <div class="player-box">
+            <h3 id="player1Label">Player 1 🎯</h3>
+            <div id="diceArea1" class="dice-area"></div>
+            <div id="p1Info" class="player-info"></div>
+          </div>
+
+          <div class="player-box">
+            <h3 id="player2Label">Player 2 💻</h3>
+            <div id="diceArea2" class="dice-area"></div>
+            <div id="p2Info" class="player-info"></div>
+          </div>
+        </div>
+
+        <div id="message" class="message">Choose options on the left and press Roll.</div>
+
+        <div class="history">
+          <h3>🧾 Recent Events</h3>
+          <ul id="historyList"></ul>
+        </div>
+      </section>
+
+      <!-- ✅ New Footer Text Here -->
+      <div class="footer-note">
+        Built with Flask • Simple demo
+      </div>
+    </main>
+  </div>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

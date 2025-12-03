@@ -1,0 +1,270 @@
+:root {
+  --bg1: linear-gradient(135deg, #8fd3f4 0%, #84fab0 100%);
+  --card-bg: rgba(255, 255, 255, 0.95);
+  --accent: #2d9cdb;
+  --muted: #555;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body, html {
+  height: 100%;
+}
+
+body {
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: var(--bg1);
+  color: #222;
+}
+
+/* Main layout */
+.app {
+  display: flex;
+  gap: 30px;
+  width: 90%;
+  max-width: 1200px;
+  margin: 50px auto;
+  align-items: flex-start;
+}
+
+/* LEFT PANEL */
+.left-panel {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.control-box {
+  background: var(--card-bg);
+  padding: 20px;
+  border-radius: 14px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.control-box h2 {
+  text-align: center;
+  font-size: 18px;
+  color: #1d3557;
+  margin-bottom: 8px;
+}
+
+.control-line {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.control-line:last-child {
+  border-bottom: none;
+}
+
+label {
+  font-weight: 600;
+  color: #334155;
+}
+
+.btn-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+button {
+  border: none;
+  padding: 10px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  background: #eef2f7;
+  color: #1f2937;
+  transition: all 0.2s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+}
+
+button.active {
+  background: var(--accent);
+  color: #fff;
+  box-shadow: 0 6px 18px rgba(45, 156, 219, 0.25);
+}
+
+button.muted {
+  background: #f0f0f0;
+  color: var(--muted);
+}
+
+.mini-stats {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+  font-weight: 600;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* MAIN PANEL */
+.main-panel {
+  flex: 1;
+  background: transparent;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+header h1 {
+  font-size: 28px;
+}
+
+.subtitle {
+  color: var(--muted);
+  font-weight: 500;
+}
+
+/* Game Area */
+.game-area {
+  background: var(--card-bg);
+  padding: 28px;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(17, 24, 39, 0.08);
+  text-align: center;
+}
+
+.dice-area {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  margin: 24px 0;
+}
+.players-area {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.player-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.player-box h3 {
+  font-size: 18px;
+  color: #1f2937;
+  font-weight: 600;
+}
+
+.next-turn {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.player-info {
+  margin-top: 8px;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+.hidden { 
+display: none !important; 
+}
+
+.btn-group {
+display:flex; gap:8px; align-items:center;
+}
+
+
+.die {
+  width: 120px;
+  height: 120px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 56px;
+  background: linear-gradient(145deg, #ffffff, #e6eefc);
+  box-shadow: 8px 12px 26px rgba(17, 24, 39, 0.08);
+  transition: transform 0.6s cubic-bezier(.2, .8, .2, 1);
+}
+
+.die.roll {
+  transform: rotate(360deg) scale(1.02);
+}
+
+.message {
+  font-weight: 600;
+  margin: 12px 0 24px;
+  color: #1f2937;
+}
+
+.history {
+  margin-top: 20px;
+  text-align: left;
+}
+
+.history h3 {
+  margin-bottom: 8px;
+}
+
+.history ul {
+  list-style: none;
+  max-height: 160px;
+  overflow-y: auto;
+  padding-right: 6px;
+}
+
+.history li {
+  padding: 8px 10px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  background: linear-gradient(#ffffff, #fbfdff);
+  font-size: 14px;
+  box-shadow: 0 6px 12px rgba(8, 16, 30, 0.04);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .app {
+    flex-direction: column;
+    width: 92%;
+  }
+  .left-panel {
+    width: 100%;
+    order: 2;
+  }
+  .main-panel {
+    order: 1;
+  }
+}
+.footer-note {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #1f2937;
+  opacity: 0.75;
+}
+
