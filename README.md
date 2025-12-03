@@ -1,3 +1,4 @@
+
 # 🎲 Dice Roller Game – Backend (Flask)
 This is the backend API for the Dice Roller Game.  
 It provides REST endpoints for rolling dice, tracking game state, and resetting the game.
@@ -29,3 +30,4 @@ backend/
 ├── main.py
 ├── requirements.txt
 └── README.md
+
